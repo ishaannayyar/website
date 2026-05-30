@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishaan Nayyar — Save & Invest · Grow Career · Assimilate & Immigrate</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F4EFE6;
+    --bg-card: #FBF8F2;
+    --ink: #1F1A14;
+    --ink-soft: #4A3F32;
+    --ink-mute: #8A7E6D;
+    --accent: #C4632B;
+    --accent-soft: #E8A87C;
+    --line: #DDD3C2;
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'Inter', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px; line-height: 1.6;
+  }
+
+  /* ──────── NAV ──────── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(244, 239, 230, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+    padding: 18px 48px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 22px; font-weight: 500; letter-spacing: -0.5px;
+    color: var(--ink); text-decoration: none;
+  }
+  .logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    font-size: 14px; color: var(--ink-soft);
+    text-decoration: none; font-weight: 400;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--accent); }
+  .btn {
+    display: inline-block; text-decoration: none;
+    padding: 11px 24px; border-radius: 999px;
+    font-size: 14px; font-weight: 500;
+    transition: all 0.25s ease;
+    cursor: pointer; border: none;
+    font-family: inherit;
+  }
+  .btn-primary { background: var(--ink); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); }
+  .btn-outline {
+    background: transparent; color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--bg); }
+
+  /* ──────── TOP DISCLAIMER STRIP ──────── */
+  .strip {
+    background: var(--ink); color: var(--bg);
+    text-align: center; padding: 10px 24px;
+    font-size: 12.5px; letter-spacing: 0.3px;
+  }
+  .strip em { color: var(--accent-soft); font-style: italic; font-family: var(--serif); }
+
+  /* ──────── HERO ──────── */
+  .hero {
+    padding: 70px 48px 100px;
+    display: grid; grid-template-columns: 1fr 1.2fr;
+    gap: 80px; max-width: 1200px; margin: 0 auto;
+    align-items: center;
+  }
+  .hero-photo {
+    aspect-ratio: 4 / 5; width: 100%;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+    border-radius: 24px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--bg-card); font-family: var(--serif); font-size: 14px;
+    letter-spacing: 4px; text-transform: uppercase;
+    box-shadow: 18px 18px 0 var(--ink);
+    position: relative; overflow: hidden;
+  }
+  .hero-photo .symbol {
+    position: absolute; color: rgba(255,255,255,0.85);
+    font-family: var(--serif); font-style: italic; font-weight: 500;
+  }
+  .hero-photo .s1 { top: 14%; left: 12%; font-size: 38px; transform: rotate(-12deg); }
+  .hero-photo .s2 { top: 28%; right: 14%; font-size: 32px; transform: rotate(8deg); }
+  .hero-photo .s3 { bottom: 22%; left: 18%; font-size: 40px; transform: rotate(6deg); }
+  .hero-photo .s4 { bottom: 14%; right: 16%; font-size: 28px; transform: rotate(-10deg); }
+  .hero-photo .label {
+    position: absolute; bottom: 12%; left: 0; right: 0; text-align: center;
+    font-size: 11px; letter-spacing: 5px;
+  }
+  .hero-wave {
+    display: inline-block; font-size: 28px;
+    animation: wave 2s ease-in-out infinite;
+    transform-origin: 70% 70%;
+  }
+  @keyframes wave {
+    0%,60%,100% { transform: rotate(0); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(32px, 4vw, 50px);
+    font-weight: 400; line-height: 1.1;
+    letter-spacing: -1.5px;
+    margin-bottom: 28px;
+    color: var(--ink);
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero h1 strong { font-weight: 700; }
+  .hero p {
+    font-size: 17px; color: var(--ink-soft);
+    margin-bottom: 36px; max-width: 540px; line-height: 1.7;
+  }
+  .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* ──────── PILLAR STRIP ──────── */
+  .pillar-strip {
+    padding: 36px 48px;
+    background: var(--ink);
+    color: var(--bg);
+    text-align: center;
+    overflow: hidden;
+  }
+  .pillar-strip-inner {
+    max-width: 1200px; margin: 0 auto;
+    display: flex; justify-content: center; align-items: center;
+    gap: 56px; flex-wrap: wrap;
+    font-family: var(--serif);
+    font-size: clamp(20px, 3vw, 32px);
+    font-weight: 400;
+    letter-spacing: -0.5px;
+  }
+  .pillar-strip-inner em { font-style: italic; color: var(--accent-soft); }
+  .pillar-strip-inner .sep { color: var(--accent); font-size: 0.7em; }
+
+  /* ──────── ABOUT ──────── */
+  .about {
+    padding: 120px 48px;
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 80px; align-items: start;
+  }
+  .section-eyebrow {
+    font-size: 14px; color: var(--accent);
+    font-style: italic; font-family: var(--serif);
+    margin-bottom: 16px;
+  }
+  .section-eyebrow::before { content: '• '; }
+  .about h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 42px);
+    font-weight: 500; line-height: 1.15;
+    letter-spacing: -1px;
+  }
+  .about h2 em { font-style: italic; color: var(--accent); font-weight: 400; }
+  .about-text p {
+    color: var(--ink-soft); margin-bottom: 20px;
+    font-size: 16px; line-height: 1.75;
+  }
+  .about-text .link {
+    color: var(--ink); font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1.5px solid var(--accent);
+    padding-bottom: 2px; transition: color 0.2s;
+  }
+  .about-text .link:hover { color: var(--accent); }
+
+  /* ──────── THREE PILLARS (FEATURE SECTION) ──────── */
+  .pillars {
+    padding: 100px 48px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .pillars-inner { max-width: 1200px; margin: 0 auto; }
+  .pillars-header { text-align: center; margin-bottom: 56px; }
+  .pillars-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 500; letter-spacing: -1px; line-height: 1.15;
+    max-width: 700px; margin: 0 auto;
+  }
+  .pillars-header h2 em { font-style: italic; color: var(--accent); }
+  .pillars-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .pillar-card {
+    background: var(--bg); border: 1px solid var(--line);
+    border-radius: 22px; padding: 40px 32px;
+    transition: all 0.3s;
+    display: flex; flex-direction: column;
+  }
+  .pillar-card:hover {
+    transform: translateY(-6px); border-color: var(--accent);
+    box-shadow: 0 24px 48px -24px rgba(0,0,0,0.15);
+  }
+  .pillar-num {
+    width: 52px; height: 52px;
+    background: var(--accent); color: white;
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--serif); font-size: 22px;
+    font-weight: 500; font-style: italic;
+    margin-bottom: 22px;
+  }
+  .pillar-card h3 {
+    font-family: var(--serif); font-size: 26px;
+    font-weight: 500; letter-spacing: -0.5px;
+    margin-bottom: 12px;
+  }
+  .pillar-tagline {
+    color: var(--accent); font-style: italic;
+    font-family: var(--serif); font-size: 15px;
+    margin-bottom: 22px;
+  }
+  .pillar-card > p {
+    color: var(--ink-soft); font-size: 15px;
+    line-height: 1.65; margin-bottom: 26px;
+  }
+  .pillar-card .topics {
+    margin-top: auto;
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+  }
+  .pillar-card .topics-label {
+    font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--ink-mute);
+    font-weight: 600; margin-bottom: 14px;
+  }
+  .pillar-card .topics ul { list-style: none; padding: 0; }
+  .pillar-card .topics li {
+    font-size: 14px; color: var(--ink-soft);
+    padding: 5px 0 5px 18px; position: relative;
+    line-height: 1.5;
+  }
+  .pillar-card .topics li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--accent); font-weight: 600;
+  }
+
+  /* ──────── LEAD MAGNET ──────── */
+  .lead-magnet { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+  .lead-card {
+    background: var(--ink); color: var(--bg);
+    border-radius: 32px; padding: 80px 60px;
+    display: grid; grid-template-columns: 1fr 1.4fr;
+    gap: 60px; align-items: center;
+    position: relative; overflow: hidden;
+  }
+  .lead-icon {
+    width: 100%; aspect-ratio: 1;
+    background: var(--accent); border-radius: 20px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 56px; box-shadow: 14px 14px 0 var(--accent-soft);
+    font-family: var(--serif); font-style: italic; color: white;
+    text-align: center; line-height: 1.1;
+  }
+  .lead-content .section-eyebrow { color: var(--accent-soft); }
+  .lead-content h3 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3vw, 36px);
+    font-weight: 500; line-height: 1.2;
+    margin-bottom: 20px; letter-spacing: -0.5px;
+  }
+  .lead-content p {
+    color: rgba(244, 239, 230, 0.75);
+    margin-bottom: 28px; line-height: 1.7; max-width: 480px;
+  }
+  .lead-card .btn-primary { background: var(--bg); color: var(--ink); }
+  .lead-card .btn-primary:hover { background: var(--accent); color: var(--bg); }
+
+  /* ──────── WORK WITH ME ──────── */
+  .work { padding: 120px 48px; max-width: 1200px; margin: 0 auto; }
+  .work-header { text-align: center; margin-bottom: 64px; }
+  .work-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 500; letter-spacing: -1px; line-height: 1.15;
+    max-width: 700px; margin: 0 auto;
+  }
+  .work-header h2 em { font-style: italic; color: var(--accent); }
+  .work-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  .work-card {
+    background: var(--bg-card); border: 1px solid var(--line);
+    border-radius: 20px; padding: 40px 32px;
+    transition: all 0.3s; position: relative;
+  }
+  .work-card:hover {
+    transform: translateY(-4px); border-color: var(--accent);
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.1);
+  }
+  .work-card.featured { border-color: var(--accent); background: var(--ink); color: var(--bg); }
+  .work-card.featured .work-num { color: var(--accent-soft); }
+  .work-card.featured h3 { color: var(--bg); }
+  .work-card.featured p { color: rgba(244,239,230,0.7); }
+  .work-card.featured .price { color: var(--accent-soft); border-color: rgba(244,239,230,0.15); }
+  .work-card.featured .price strong { color: var(--bg); }
+  .featured-tag {
+    position: absolute; top: -12px; right: 28px;
+    background: var(--accent); color: white;
+    font-size: 11px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 999px;
+  }
+  .work-num {
+    font-family: var(--serif); font-size: 14px; font-style: italic;
+    color: var(--accent); margin-bottom: 18px;
+  }
+  .work-card h3 {
+    font-family: var(--serif); font-size: 22px; font-weight: 500;
+    margin-bottom: 14px; letter-spacing: -0.5px;
+  }
+  .work-card p {
+    font-size: 15px; color: var(--ink-soft);
+    margin-bottom: 24px; line-height: 1.65;
+  }
+  .work-card .price {
+    font-size: 13px; color: var(--ink-mute);
+    border-top: 1px solid var(--line);
+    padding-top: 16px; font-weight: 500;
+  }
+  .work-card .price strong { color: var(--ink); font-weight: 600; }
+
+  /* ──────── TESTIMONIALS ──────── */
+  .testimonials {
+    padding: 120px 48px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .testimonials-inner { max-width: 1100px; margin: 0 auto; }
+  .testimonials h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 40px);
+    font-weight: 500; margin-bottom: 64px;
+    text-align: center; letter-spacing: -1px;
+  }
+  .testimonials h2 em { font-style: italic; color: var(--accent); }
+  .testi-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+  }
+  .testi-card {
+    background: var(--bg); padding: 36px 32px;
+    border-radius: 20px; border: 1px solid var(--line);
+    position: relative;
+  }
+  .testi-pillar {
+    position: absolute; top: 20px; right: 20px;
+    font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent);
+    font-weight: 600; background: var(--bg-card);
+    padding: 4px 10px; border-radius: 999px;
+  }
+  .testi-card .quote {
+    font-family: var(--serif); font-size: 18px; line-height: 1.55;
+    font-style: italic; color: var(--ink); margin-bottom: 24px;
+    padding-right: 80px;
+  }
+  .testi-card .quote::before {
+    content: '"'; font-size: 36px; color: var(--accent);
+    line-height: 0; vertical-align: -16px; margin-right: 4px;
+  }
+  .testi-author { display: flex; align-items: center; gap: 14px; }
+  .testi-avatar {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 600; font-size: 15px;
+  }
+  .testi-author-info .name { font-weight: 600; font-size: 14px; color: var(--ink); }
+  .testi-author-info .role { font-size: 13px; color: var(--ink-mute); }
+
+  /* ──────── TRANSPARENCY ──────── */
+  .transparency { padding: 100px 48px; max-width: 1100px; margin: 0 auto; }
+  .transparency-header { text-align: center; margin-bottom: 56px; }
+  .transparency-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(26px, 3vw, 38px);
+    font-weight: 500; letter-spacing: -1px;
+    line-height: 1.15; margin-bottom: 12px;
+  }
+  .transparency-header h2 em { font-style: italic; color: var(--accent); }
+  .transparency-header p {
+    color: var(--ink-soft); font-size: 16px;
+    max-width: 520px; margin: 0 auto;
+  }
+  .transparency-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 32px;
+  }
+  .trans-card {
+    border-radius: 20px; padding: 36px 32px;
+    border: 1.5px solid var(--line); background: var(--bg-card);
+  }
+  .trans-card.is { border-color: var(--accent); }
+  .trans-card h3 {
+    font-family: var(--serif); font-size: 18px; font-weight: 600;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 22px; color: var(--ink);
+  }
+  .trans-card.is h3 { color: var(--accent); }
+  .trans-card ul { list-style: none; padding: 0; }
+  .trans-card li {
+    font-size: 15px; color: var(--ink-soft);
+    padding: 8px 0 8px 28px; position: relative; line-height: 1.55;
+  }
+  .trans-card.is li::before {
+    content: '✓'; position: absolute; left: 0;
+    color: var(--accent); font-weight: 600;
+  }
+  .trans-card.isnt li::before {
+    content: '×'; position: absolute; left: 0;
+    color: var(--ink-mute); font-weight: 600; font-size: 18px;
+  }
+
+  /* ──────── SIGNUP ──────── */
+  .signup { padding: 100px 48px; text-align: center; }
+  .signup-inner { max-width: 600px; margin: 0 auto; }
+  .signup h2 {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.5vw, 38px);
+    font-weight: 500; margin-bottom: 16px;
+    letter-spacing: -0.5px; line-height: 1.2;
+  }
+  .signup h2 em { font-style: italic; color: var(--accent); }
+  .signup p { color: var(--ink-soft); margin-bottom: 32px; font-size: 16px; }
+  .signup-form {
+    display: flex; gap: 10px;
+    max-width: 460px; margin: 0 auto;
+    background: var(--bg-card);
+    border: 1.5px solid var(--line);
+    border-radius: 999px; padding: 6px;
+    transition: border-color 0.2s;
+  }
+  .signup-form:focus-within { border-color: var(--accent); }
+  .signup-form input {
+    flex: 1; border: none; background: transparent;
+    padding: 12px 20px; font-size: 15px;
+    font-family: inherit; color: var(--ink); outline: none;
+  }
+  .signup-form input::placeholder { color: var(--ink-mute); }
+  .signup-form button {
+    padding: 12px 28px; border-radius: 999px;
+    background: var(--accent); color: white;
+    border: none; cursor: pointer;
+    font-family: inherit; font-weight: 500;
+    font-size: 14px; transition: background 0.2s;
+  }
+  .signup-form button:hover { background: var(--ink); }
+
+  /* ──────── FOOTER ──────── */
+  footer { background: var(--ink); color: var(--bg); padding: 80px 48px 40px; }
+  .footer-grid {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px; margin-bottom: 60px;
+  }
+  .footer-brand .logo { color: var(--bg); font-size: 28px; }
+  .footer-brand p {
+    color: rgba(244, 239, 230, 0.6);
+    margin-top: 16px; font-size: 14px;
+    max-width: 280px; line-height: 1.6;
+  }
+  .footer-col h4 {
+    font-size: 12px; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--accent-soft);
+    margin-bottom: 18px; font-weight: 600;
+  }
+  .footer-col a {
+    display: block; color: rgba(244, 239, 230, 0.75);
+    text-decoration: none; font-size: 14px;
+    margin-bottom: 10px; transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--accent-soft); }
+  .legal-block {
+    max-width: 1100px; margin: 40px auto 0;
+    padding: 24px;
+    border: 1px solid rgba(244, 239, 230, 0.15);
+    border-radius: 14px;
+    font-size: 12px; color: rgba(244, 239, 230, 0.55);
+    line-height: 1.65;
+  }
+  .legal-block strong { color: var(--accent-soft); font-weight: 600; }
+  .footer-bottom {
+    max-width: 1100px; margin: 40px auto 0;
+    padding-top: 32px;
+    border-top: 1px solid rgba(244, 239, 230, 0.12);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(244, 239, 230, 0.5);
+  }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 20px; }
+    .nav-links a:not(:last-child) { display: none; }
+    .hero { grid-template-columns: 1fr; gap: 48px; padding: 48px 24px 64px; }
+    .hero-photo { max-width: 320px; margin: 0 auto; }
+    .pillar-strip { padding: 28px 20px; }
+    .pillar-strip-inner { gap: 20px; font-size: 22px; }
+    .about { grid-template-columns: 1fr; gap: 32px; padding: 64px 24px; }
+    .pillars { padding: 64px 24px; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .lead-magnet { padding: 32px 24px 80px; }
+    .lead-card { grid-template-columns: 1fr; gap: 32px; padding: 48px 28px; }
+    .lead-icon { max-width: 180px; }
+    .work { padding: 64px 24px; }
+    .work-grid { grid-template-columns: 1fr; }
+    .testimonials { padding: 64px 24px; }
+    .testi-grid { grid-template-columns: 1fr; }
+    .testi-card .quote { padding-right: 0; padding-top: 24px; }
+    .testi-pillar { top: 14px; left: 22px; right: auto; }
+    .transparency { padding: 64px 24px; }
+    .transparency-grid { grid-template-columns: 1fr; }
+    .signup { padding: 64px 24px; }
+    .signup-form { flex-direction: column; border-radius: 16px; }
+    .signup-form button { width: 100%; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="strip">
+  Independent <em>education</em> for international professionals  ·  Not investment, tax, legal or immigration advice
+</div>
+
+<nav>
+  <a href="#" class="logo">Ishaan<em>.</em></a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#pillars">Pillars</a>
+    <a href="#work">Work With Me</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#transparency">What This Is</a>
+    <a href="#signup" class="btn btn-outline">Subscribe</a>
+  </div>
+</nav>
+
+<!-- ───────── HERO ───────── -->
+<section class="hero">
+  <div class="hero-photo">
+    <span class="symbol s1">€</span>
+    <span class="symbol s2">↗</span>
+    <span class="symbol s3">⌖</span>
+    <span class="symbol s4">→</span>
+    <span class="label">YOUR PHOTO HERE</span>
+  </div>
+  <div>
+    <h1>Hi <span class="hero-wave">👋</span> I'm <em>Ishaan</em>. I help international professionals master three things that decide everything: <strong>saving & investing, growing a career, and where you live</strong>.</h1>
+    <p>A decade of building a tech career across continents — and managing my own savings, visas, and life decisions across as many currencies — taught me that no one teaches this stuff. So I started teaching it. Frameworks, not recommendations. Education, not advice.</p>
+    <div class="hero-cta">
+      <a href="#signup" class="btn btn-primary">Join the newsletter</a>
+      <a href="#pillars" class="btn btn-outline">See the three pillars →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── PILLAR TAGLINE STRIP ───────── -->
+<section class="pillar-strip">
+  <div class="pillar-strip-inner">
+    <span><em>Save &amp; Invest</em></span>
+    <span class="sep">●</span>
+    <span><em>Grow Career</em></span>
+    <span class="sep">●</span>
+    <span><em>Assimilate &amp; Immigrate</em></span>
+  </div>
+</section>
+
+<!-- ───────── ABOUT ───────── -->
+<section class="about" id="about">
+  <div>
+    <div class="section-eyebrow">About Me</div>
+    <h2>I left India a decade ago — and never stopped <em>navigating borders</em>.</h2>
+  </div>
+  <div class="about-text">
+    <p>Since I left home, I've been juggling savings in multiple currencies, watching a tech career compound across continents, and answering the same question every visa renewal: "where exactly is home?"</p>
+    <p>Along the way I learned that most professional advice is built for people who stay still. Single country. Single currency. Single career arc. International life doesn't work that way — and the gap in good education for people like us is enormous.</p>
+    <p>So I built my own frameworks for the three areas that matter most: how to save and invest when your money lives across borders, how to design a career that travels with you, and how to navigate the visa, residency and identity questions that come with all of it.</p>
+    <p><strong>This is education, not advice.</strong> I won't tell you what to do. I'll teach you how to think — so you can ask better questions of the licensed advisors who eventually do.</p>
+    <p><a href="#transparency" class="link">Read my transparency note →</a></p>
+  </div>
+</section>
+
+<!-- ───────── THREE PILLARS ───────── -->
+<section class="pillars" id="pillars">
+  <div class="pillars-inner">
+    <div class="pillars-header">
+      <div class="section-eyebrow">The Three Pillars</div>
+      <h2>Three domains, one philosophy: <em>frameworks before answers</em>.</h2>
+    </div>
+    <div class="pillars-grid">
+
+      <div class="pillar-card">
+        <div class="pillar-num">$</div>
+        <h3>Save &amp; Invest</h3>
+        <div class="pillar-tagline">Building wealth across currencies</div>
+        <p>The mental models behind every saving and investing decision an international professional has to make — without telling you what to buy.</p>
+        <div class="topics">
+          <div class="topics-label">What I teach</div>
+          <ul>
+            <li>Saving frameworks: emergency funds, sinking funds, short-term cash</li>
+            <li>Stocks 101 for international investors</li>
+            <li>ETFs, index funds & what's actually accessible to you</li>
+            <li>Crowdfunding, P2P lending & alternative platforms</li>
+            <li>Tax-efficient accounts (concepts that exist in most countries)</li>
+            <li>Multi-currency portfolio thinking & FX risk</li>
+            <li>Real estate as an investment, across borders</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">c</div>
+        <h3>Grow Career</h3>
+        <div class="pillar-tagline">Building work that travels with you</div>
+        <p>How to grow a senior international career that compounds — and what to do when the "next move" decisions stop being obvious.</p>
+        <div class="topics">
+          <div class="topics-label">What I teach</div>
+          <ul>
+            <li>Senior career moves across countries</li>
+            <li>Director → Partner / MD / VP transitions</li>
+            <li>Compensation, equity & negotiation frameworks</li>
+            <li>CV, narrative & executive personal branding</li>
+            <li>Remote, hybrid & independent work strategies</li>
+            <li>Building optionality at every career stage</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-num">↗</div>
+        <h3>Assimilate &amp; Immigrate</h3>
+        <div class="pillar-tagline">Building a life across borders</div>
+        <p>The unglamorous, paperwork-heavy reality of cross-border life — and the equally important work of building a real life in a place that isn't where you grew up.</p>
+        <div class="topics">
+          <div class="topics-label">What I teach</div>
+          <ul>
+            <li>Visa pathways for tech & professional roles</li>
+            <li>OCI, dual citizenship & long-term identity choices</li>
+            <li>Tax residency: how to read your own situation</li>
+            <li>Cross-border family planning & schooling</li>
+            <li>Visitor & dependent visas for family members</li>
+            <li>Building belonging: language, community, social capital</li>
+            <li>The repatriation question — and how to plan for it</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ───────── LEAD MAGNET ───────── -->
+<section class="lead-magnet">
+  <div class="lead-card">
+    <div class="lead-icon">i · c · ↗</div>
+    <div class="lead-content">
+      <div class="section-eyebrow">Free Guide</div>
+      <h3>The Three-Pillar Map.</h3>
+      <p>A 28-page framework for international professionals to audit where you stand on saving & investing, career growth, and assimilation & immigration — and identify which pillar to focus on first. The same self-audit I use myself, refined over a decade of cross-border life.</p>
+      <a href="#" class="btn btn-primary">Download the map →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── WORK WITH ME ───────── -->
+<section class="work" id="work">
+  <div class="work-header">
+    <div class="section-eyebrow">Work With Me</div>
+    <h2>Three ways to learn together, depending on <em>where you are</em>.</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-num">01</div>
+      <h3>The Newsletter</h3>
+      <p>Weekly notes across all three pillars: saving & investing frameworks, career growth strategy, and the realities of assimilating into a new country. One email every Tuesday. No upsells in the body. Unsubscribe in one click.</p>
+      <div class="price"><strong>Free</strong> · every Tuesday</div>
+    </div>
+    <div class="work-card featured">
+      <div class="featured-tag">Most popular</div>
+      <div class="work-num">02</div>
+      <h3>Cross-Border Foundations</h3>
+      <p>A 6-week self-paced course covering all three pillars. Frameworks, worksheets, a private cohort community, and four live sessions where I answer your specific questions. Built for international professionals at the inflection point.</p>
+      <div class="price"><strong>€490</strong> · next cohort starts quarterly</div>
+    </div>
+    <div class="work-card">
+      <div class="work-num">03</div>
+      <h3>1:1 Strategy Coaching</h3>
+      <p>A 90-minute deep-dive on your specific situation across one or all three pillars. We map your flows, identify gaps, and build the right questions for the licensed advisors who'll handle the regulated parts.</p>
+      <div class="price"><strong>€350</strong> · single session</div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── TESTIMONIALS ───────── -->
+<section class="testimonials" id="testimonials">
+  <div class="testimonials-inner">
+    <h2>What readers <em>say</em></h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <span class="testi-pillar">Save &amp; Invest</span>
+        <div class="quote">I'd been moving money between three accounts for years with no real framework. One session and I finally understood my own situation. He doesn't tell you what to do — he teaches you how to think.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">PK</div>
+          <div class="testi-author-info">
+            <div class="name">Priya K.</div>
+            <div class="role">Product Manager · Indian expat in Paris</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-pillar">Grow Career</span>
+        <div class="quote">Ishaan helped me move from Senior Manager to Director in 4 months. The CV work alone was worth it — but the negotiation script earned me a 22% comp uplift on the offer.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">MD</div>
+          <div class="testi-author-info">
+            <div class="name">Marc D.</div>
+            <div class="role">Director · French expat in Berlin</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-pillar">Assimilate &amp; Immigrate</span>
+        <div class="quote">I spent three months reading visa forums and getting nowhere. One conversation with Ishaan and I had a clear path. He doesn't replace a lawyer — he gives you the map you need before you hire one.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">RT</div>
+          <div class="testi-author-info">
+            <div class="name">Rajesh T.</div>
+            <div class="role">VP Engineering · Indian expat in London</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <span class="testi-pillar">All three</span>
+        <div class="quote">Most creators in this space pick one lane. Ishaan is the only one I've found who connects all three: how your career, your wealth, and your visa situation actually shape each other. That integration is rare.</div>
+        <div class="testi-author">
+          <div class="testi-avatar">EJ</div>
+          <div class="testi-author-info">
+            <div class="name">Elena J.</div>
+            <div class="role">Senior Designer · Spanish expat in Amsterdam</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── TRANSPARENCY ───────── -->
+<section class="transparency" id="transparency">
+  <div class="transparency-header">
+    <div class="section-eyebrow">Transparency</div>
+    <h2>What this <em>is</em> — and what it <em>isn't</em></h2>
+    <p>I'd rather lose a sale than confuse what I do. Here's the line, in plain English.</p>
+  </div>
+  <div class="transparency-grid">
+    <div class="trans-card is">
+      <h3>What This Is</h3>
+      <ul>
+        <li>Independent education on saving, investing, career growth, immigration & assimilation</li>
+        <li>Frameworks, mental models and self-audit tools</li>
+        <li>Personal stories from a decade of cross-border life</li>
+        <li>Coaching on behaviour, goals, decision-making</li>
+        <li>A community of international professionals comparing notes</li>
+        <li>Help formulating the right questions for licensed advisors</li>
+      </ul>
+    </div>
+    <div class="trans-card isnt">
+      <h3>What This Isn't</h3>
+      <ul>
+        <li>Investment advice or specific product recommendations</li>
+        <li>Tax advice — see a qualified fiscal expert in your country</li>
+        <li>Legal or immigration advice — see a licensed lawyer / immigration consultant</li>
+        <li>A substitute for a registered financial advisor in your jurisdiction</li>
+        <li>Affiliate-driven product pushing</li>
+        <li>Anything that requires regulatory licensing</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ───────── SIGNUP ───────── -->
+<section class="signup" id="signup">
+  <div class="signup-inner">
+    <div class="section-eyebrow">Newsletter</div>
+    <h2>Get <em>weekly</em> notes on saving, career growth & cross-border life.</h2>
+    <p>One email every Tuesday. Frameworks, stories, and the questions I'm wrestling with this week. Always free, no upsells in the body.</p>
+    <form class="signup-form" onsubmit="event.preventDefault(); this.querySelector('input').value=''; this.querySelector('button').textContent='Thanks! ✓';">
+      <input type="email" placeholder="your@email.com" required>
+      <button type="submit">Subscribe →</button>
+    </form>
+  </div>
+</section>
+
+<!-- ───────── FOOTER ───────── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo">Ishaan<em>.</em></a>
+      <p>Independent education for international professionals navigating saving, investing, career growth and cross-border life.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pillars</h4>
+      <a href="#pillars">Save &amp; Invest</a>
+      <a href="#pillars">Grow Career</a>
+      <a href="#pillars">Assimilate &amp; Immigrate</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">Three-Pillar Map (free)</a>
+      <a href="#">Newsletter</a>
+      <a href="#">Course</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">Substack</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+
+  <div class="legal-block">
+    <strong>Important notice.</strong> All content on this site is provided strictly for educational and informational purposes. Nothing here constitutes investment, tax, legal, accounting or immigration advice. I am not a licensed financial advisor, tax professional, lawyer or immigration consultant. For personalised recommendations on investments, taxation, estate planning, immigration or any regulated matter, please consult an appropriately licensed professional in your jurisdiction. Past performance does not guarantee future results. Capital is at risk in any investment. Visa and tax rules change frequently and vary by individual circumstance.
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Ishaan Nayyar · All rights reserved</span>
+    <span><a href="#" style="color: inherit; text-decoration: none;">Privacy</a>  ·  <a href="#" style="color: inherit; text-decoration: none;">Terms</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
